@@ -1,6 +1,7 @@
 <h1>AgroFly Solutions Landing page</h1>
 
-A simple landing page for a digital agency
+
+AgroFly Solutions Landing page
 
 ![Agrofly light Theme](./screens/Screenshot-dark_mode.png)
 ![Agrofly Dark Theme](./screens/Screenshot-light-mode.png)
