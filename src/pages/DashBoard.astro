@@ -1,0 +1,51 @@
+---
+
+
+---
+
+
+<main class="p-4 bg-gray-100 min-h-screen">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Temperature Chart -->
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-4">Temperature Trends</h2>
+            <canvas id="temperatureChart"></canvas>
+        </div>
+
+        <!-- Humidity Chart -->
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-4">Humidity Levels</h2>
+            <canvas id="humidityChart"></canvas>
+        </div>
+
+        <!-- Precipitation Chart -->
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-4">Precipitation</h2>
+            <canvas id="precipitationChart"></canvas>
+        </div>
+
+        <!-- Wind Speed -->
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-4">Wind Speed</h2>
+            <canvas id="windChart"></canvas>
+        </div>
+
+        <!-- Weather Summary -->
+        <div class="bg-white p-4 rounded-lg shadow col-span-2">
+            <h2 class="text-lg font-semibold mb-4">Weather Summary</h2>
+            <div id="weatherSummary"></div>
+        </div>
+    </div>
+</main>
+
+
+<script>
+    import { initializeCharts } from '../utils/initCharts';
+
+    // Initialize charts after DOM is loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeCharts);
+    } else {
+        initializeCharts();
+    }
+</script>

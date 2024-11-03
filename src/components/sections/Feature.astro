@@ -1,0 +1,62 @@
+---
+import Container from "../shared/Container.astro";
+
+---
+
+<section class="relative py-16 sm:py-24">
+    <Container>
+        <div class="flex flex-col sm:flex-row gap-5">
+            {/* First Feature */}
+            <div 
+                class="flex flex-col md:w-6/12 w-full group"
+            >
+                <div class="relative overflow-hidden rounded-2xl min-h-[660px]">
+                    <img 
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/21ffd77da80b4016abc5e03d509431ce771cbf2aaf8d0a74145a41eabbb9780a"
+                        alt="Ultra light drone illustration"
+                        class="object-cover absolute inset-0 size-full transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div class="relative flex flex-col items-center justify-center h-full px-8 text-center z-10 bg-gradient-to-t from-black/20 to-transparent">
+                        <h2
+                            class="text-5xl font-semibold max-md:text-4xl"
+                        >
+                            Ultra Light
+                        </h2>
+                        <p
+                            class="mt-2.5 text-3xl font-light leading-[50px]"
+                        >
+                            Drone move faster with weighing<br />
+                            component <span class="font-medium">under 200 g</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Second Feature */}
+            <div
+                class="flex flex-col md:w-6/12 w-full group"
+            >
+                <div class="relative overflow-hidden rounded-2xl min-h-[660px]">
+                    <img 
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/a4183f2e4dfb555d65d089db007396088544662aee62b62ea487eaa151e88644"
+                        alt="High resolution camera illustration"
+                        class="object-cover absolute inset-0 size-full transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div class="relative flex flex-col items-center justify-center h-full px-8 text-center z-10 bg-gradient-to-t from-black/40 to-transparent">
+                        <h2
+                            class="text-5xl font-semibold text-white max-md:text-4xl"
+                        >
+                            Best Resolution
+                        </h2>
+                        <p
+                            class="mt-2.5 text-3xl font-light leading-[50px] text-white/80"
+                        >
+                            Take a beautiful view with best camera<br />
+                            up to <span class="text-white font-medium">4K Camera Resolution</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>

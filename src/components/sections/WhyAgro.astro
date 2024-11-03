@@ -1,0 +1,92 @@
+<section class="flex flex-col justify-center items-center px-16 py-20 w-full bg-slate-50 max-md:px-5 max-md:max-w-full">
+    <div class="w-full max-w-[1124px] max-md:max-w-full">
+      <div class="flex gap-5 max-md:flex-col">
+        <div class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3cd016e3f98bf20ecead5a8016a9abb69965d89f60d4a85dae174958c8e4fbad?placeholderIfAbsent=true&apiKey=955e09819f2042caa1b9432238fc7c73" alt="Drone Light product image" class="object-contain mt-1.5 w-full aspect-[0.96] max-md:mt-10">
+        </div>
+        <div class="flex flex-col ml-5 w-[67%] max-md:ml-0 max-md:w-full">
+          <div class="flex flex-col items-start w-full max-md:mt-10 max-md:max-w-full">
+            <h2 class="text-5xl font-semibold text-neutral-800 max-md:max-w-full max-md:text-4xl">
+              Why Choose AgroFly?
+            </h2>
+            <p class="self-stretch mt-4 text-2xl font-light leading-10 text-neutral-800 max-md:max-w-full">
+              We provide state-of-the-art agricultural drones with intuitive controls <br> and autonomous capabilities. Our advanced systems ensure precise <br> mapping and monitoring for optimal farming operations.
+            </p>
+            <div class="mt-8 max-w-full w-[678px]">
+              <div class="flex gap-5 max-md:flex-col">
+                <div class="flex flex-col w-[22%] max-md:ml-0 max-md:w-full">
+                  <div class="flex flex-col grow text-center whitespace-nowrap max-md:mt-10 hover:scale-105 transition-transform duration-300">
+                    <p class="self-center text-4xl font-semibold text-neutral-800">4K</p>
+                    <p class="mt-1.5 text-xl font-light text-neutral-800 text-opacity-80">
+                      Ultra HD <br> Resolution
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-col ml-5 w-[19%] max-md:ml-0 max-md:w-full">
+                  <div class="flex flex-col grow text-center max-md:mt-10 hover:scale-105 transition-transform duration-300">
+                    <p class="self-center text-4xl font-semibold text-neutral-800">2 TB</p>
+                    <p class="mt-1.5 text-xl font-light text-neutral-800 text-opacity-80">
+                      Data <br> Storage
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-col ml-5 w-[28%] max-md:ml-0 max-md:w-full">
+                  <div class="flex flex-col grow text-center max-md:mt-10 hover:scale-105 transition-transform duration-300">
+                    <p id="speed-counter" class="text-4xl font-semibold text-neutral-800">0 m/s</p>
+                    <p class="mt-1.5 text-xl font-light text-neutral-800 text-opacity-80">
+                      Maximum <br> Speed
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-col ml-5 w-[31%] max-md:ml-0 max-md:w-full">
+                  <div class="flex flex-col grow text-center max-md:mt-10 hover:scale-105 transition-transform duration-300">
+                    <p id="time-counter" class="text-4xl font-semibold text-neutral-800">0 mins</p>
+                    <p class="mt-1.5 text-xl font-light text-neutral-800 text-opacity-80">
+                      Flight <br> Duration
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+ function animateValue(id: string, start: number, end: number, duration: number, suffix: string = '') {
+    let startTimestamp: number | null = null;
+    const element = document.getElementById(id);
+    if (!element) return;
+    
+    function step(timestamp: number) {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const current = Math.floor(progress * (end - start) + start);
+      element!.textContent = `${current}${suffix}`; // Added non-null assertion operator (!)
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    }
+    
+    window.requestAnimationFrame(step);
+}
+
+          // Intersection Observer setup
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                animateValue('speed-counter', 0, 60, 2000, ' m/s');
+                animateValue('time-counter', 0, 30, 2000, ' mins');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.5 });
+
+          // Observe elements
+          const speedCounter = document.getElementById('speed-counter');
+          const timeCounter = document.getElementById('time-counter');
+          if (speedCounter) observer.observe(speedCounter);
+          if (timeCounter) observer.observe(timeCounter);
+        </script>
+      </div>
+    </div>
+  </section>
