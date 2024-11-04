@@ -1,36 +1,35 @@
 ---
 import BtnLink from "../shared/BtnLink.astro";
 import Container from "../shared/Container.astro";
-import  Navitem from "../shared/Navitem.astro";
 
 const navItems = [
     {
-        href:"#",
-        text:"Home"
+        href: "/",
+        text: "Home"
     },
     {
-        href:"#services",
-        text:"Services"
+        href: "#services",
+        text: "Services"
     },
     {
-        href:"#about-us",
-        text:"About us"
+        href: "#about-us", 
+        text: "About us"
     },
     {
-        href:"#features",
-        text:"Features"
+        href: "#features",
+        text: "Features"
     },
     {
-        href:"/DashBoard",
-        text:"Dashboard"
-    },
-]
+        href: "/DashBoard",
+        text: "Dashboard"
+    }
+];
 ---
 
 <header class="sticky top-0 w-full z-50 transition-all duration-300" id="navbar">
     <Container>
-        <nav class="flex items-center justify-between h-16 lg:h-20 gap-6 relative">
-            <!-- Logo - Simplified and optimized -->
+        <nav class="flex items-center justify-between h-16 lg:h-20 gap-6">
+            <!-- Logo -->
             <a href="/" class="flex items-center gap-2 hover:opacity-80 transition-all" aria-label="AgroFly Solutions Home">
                 <div class="w-8 h-8 relative rounded-xl bg-gradient-to-br from-green-500 via-primary to-[#FCDC58]">
                     <span class="absolute w-2.5 h-2.5 rounded-full bg-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></span>
@@ -38,25 +37,13 @@ const navItems = [
                 <span class="text-lg lg:text-xl font-bold text-heading-1">AgroFly Solutions</span>
             </a>
 
-            <!-- Mobile Nav Overlay -->
-            <div 
-            data-nav-overlay 
-            aria-hidden="true" 
-            class="fixed inset-0 bg-gray-800/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity lg:hidden"
-            onclick="
-                document.querySelector('[data-navbar]').classList.remove('show');
-                this.classList.add('opacity-0', 'pointer-events-none');
-                document.querySelector('[data-toggle-nav]').setAttribute('aria-expanded', 'false');
-            "
-        ></div>
-
-            <!-- Navigation Links -->
+            <!-- Navigation Menu -->
             <div data-navbar class="nav-wrapper">
                 <ul class="flex flex-col lg:flex-row gap-y-6 gap-x-8 lg:items-center lg:justify-center lg:flex-1 text-base font-medium">
                     {navItems.map(item => (
                         <li>
                             <a 
-                                href={item.href} 
+                                href={item.href}
                                 class="nav-link relative py-2.5 duration-300 hover:text-primary"
                             >
                                 {item.text}
@@ -67,9 +54,9 @@ const navItems = [
 
                 <div class="mt-6 lg:mt-0 lg:ml-6">
                     <BtnLink 
-                        text="Get Started" 
-                        href="#cta" 
-                        className="w-full lg:w-auto flex justify-center items-center gap-2 font-medium" 
+                        text="Get Started"
+                        href="#cta"
+                        className="w-full lg:w-auto flex justify-center items-center gap-2 font-medium"
                         variant="primary"
                     >
                         Get Started
@@ -80,7 +67,7 @@ const navItems = [
                 </div>
             </div>
 
-            <!-- Right Side Controls -->
+            <!-- Controls -->
             <div class="flex items-center gap-x-2">
                 <button 
                     data-switch-theme 
@@ -96,36 +83,30 @@ const navItems = [
                 </button>
 
                 <button 
-                    data-toggle-nav 
+                    data-toggle-nav
                     class="hamburger-btn lg:hidden flex items-center justify-center"
                     aria-label="Toggle navigation"
                     aria-expanded="false"
                 >
                     <span class="sr-only">Menu</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path 
-                            stroke-linecap="round" 
-                            stroke-linejoin="round" 
-                            stroke-width="2" 
-                            d="M4 6h16M4 12h16M4 18h16"
-                        />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
             </div>
+
         </nav>
     </Container>
 </header>
 
 <style>
-    /* Add these styles to your CSS */
-    
     .nav-wrapper {
-        @apply fixed lg:static top-[64px] left-0 w-full h-[calc(100vh-64px)] lg:h-auto 
-        bg-white dark:bg-gray-900 lg:bg-transparent 
-        p-6 lg:p-0
-        transform translate-x-full lg:translate-x-0 
-        transition-transform duration-300 ease-in-out 
-        lg:flex lg:items-center lg:justify-end;
+        @apply fixed lg:static top-[64px] left-0 w-full h-[calc(100vh-64px)] lg:h-auto
+               bg-white dark:bg-gray-900 lg:bg-transparent
+               p-6 lg:p-0
+               transform translate-x-full lg:translate-x-0
+               transition-transform duration-300 ease-in-out
+               lg:flex lg:items-center lg:justify-end;
     }
 
     .nav-wrapper.show {
@@ -134,8 +115,8 @@ const navItems = [
 
     .nav-link::after {
         content: '';
-        @apply absolute left-0 right-0 bottom-0 h-0.5 bg-primary 
-        transform scale-x-0 origin-right transition-transform duration-300;
+        @apply absolute left-0 right-0 bottom-0 h-0.5 bg-lime-400
+               transform scale-x-0 origin-right transition-transform duration-300;
     }
 
     .nav-link:hover::after {
@@ -146,54 +127,71 @@ const navItems = [
         @apply p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 
         transition-colors duration-200;
     }
-
     .hamburger-btn {
-        @apply p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 
-        transition-colors duration-200;
-    }
-
-    /* Hide navbar on scroll down, show on scroll up */
-    .nav-hidden {
-        transform: translateY(-100%);
+        @apply p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800
+               transition-colors duration-200;
     }
 </style>
 
 <script>
-    // Add this script to handle navbar behavior
-    let lastScroll = 0;
     const navbar = document.getElementById('navbar');
     const navOverlay = document.querySelector('[data-nav-overlay]');
     const navWrapper = document.querySelector('[data-navbar]');
     const toggleBtn = document.querySelector('[data-toggle-nav]');
+    let isNavOpen = false;
 
-    // Hide/Show navbar on scroll
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            navbar.classList.add('nav-hidden');
-        } else {
-            navbar.classList.remove('nav-hidden');
-        }
-        lastScroll = currentScroll;
-    });
+    // Handle mobile navigation
+    function toggleMobileNav() {
+        if (!navWrapper  || !toggleBtn) return;
+        
+        isNavOpen = !isNavOpen;
+        navWrapper.classList.toggle('show');
+        toggleBtn.setAttribute('aria-expanded', isNavOpen.toString());
+        
+        // Prevent body scroll when nav is open
+        document.body.style.overflow = isNavOpen ? 'hidden' : '';
+    }
 
-    // Toggle mobile navigation
-    toggleBtn?.addEventListener('click', () => {
-        navWrapper?.classList.toggle('show');
-        navOverlay?.classList.toggle('opacity-0');
-        navOverlay?.classList.toggle('pointer-events-none');
-        toggleBtn.setAttribute(
-            'aria-expanded',
-            toggleBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
-        );
-    });
-
-    // Close mobile nav on link click
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
+    // Close mobile nav
+    function closeMobileNav() {
+        if (isNavOpen) {
+            isNavOpen = false;
             navWrapper?.classList.remove('show');
-            navOverlay?.classList.add('opacity-0', 'pointer-events-none');
             toggleBtn?.setAttribute('aria-expanded', 'false');
-        });
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Event Listeners
+    toggleBtn?.addEventListener('click', toggleMobileNav);
+ 
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', closeMobileNav);
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+            closeMobileNav();
+        }
+    });
+
+    // Handle scroll behavior
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        
+        if (currentScroll <= 0) {
+            navbar?.classList.remove('nav-hidden');
+            return;
+        }
+        
+        if (currentScroll > lastScroll && !navbar?.classList.contains('nav-hidden')) {
+            navbar?.classList.add('nav-hidden');
+        } else if (currentScroll < lastScroll && navbar?.classList.contains('nav-hidden')) {
+            navbar?.classList.remove('nav-hidden');
+        }
+        
+        lastScroll = currentScroll;
     });
 </script>
