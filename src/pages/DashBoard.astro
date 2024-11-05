@@ -1,7 +1,6 @@
 ---
-
-
-----
+// Your frontmatter content goes here (if needed)
+---
 
 <main class="p-4 bg-gray-100 min-h-screen">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -37,11 +36,9 @@
     </div>
 </main>
 
-
 <script>
     import { initializeCharts } from '../utils/initCharts';
 
-    // Initialize charts after DOM is loaded
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initializeCharts);
     } else {
