@@ -76,7 +76,7 @@ const { title } = Astro.props;
     const overlayNav = document.querySelector(
       "[data-nav-overlay]"
     ) as HTMLDivElement;
-    if (toggleMenu) {
+    if (toggleMenu && navbar && overlayNav) {
       toggleMenu.addEventListener("click", e => {
         e.preventDefault();
         if (toggleMenu.getAttribute("data-open-nav") === "false") {
