@@ -50,9 +50,21 @@ export default {
   				'2': 'hsl(var(--chart-2))',
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
+  				'5': 'hsl(var(--chart-5))'			
+
   			}
-  		}
+  		},
+		      // Add keyframes and animation here, at the same level as colors
+			  keyframes: {
+				borderAnimation: {
+				  '0%': { backgroundPosition: '0% 50%' },
+				  '50%': { backgroundPosition: '100% 50%' },
+				  '100%': { backgroundPosition: '0% 50%' }
+				}
+			  },
+			  animation: {
+				'borderAnimation': 'borderAnimation 3s ease infinite'
+			  }
   	}
   },
   plugins: [require("tailwindcss-animate")],

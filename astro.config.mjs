@@ -9,5 +9,10 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind({
     applyBaseStyles: false,
-  }), react()]
+  }), react()],
+    // Add this to ensure proper JSX handling
+    jsx: {
+      factory: 'React.createElement',
+      fragment: 'React.Fragment'
+    }
 });
