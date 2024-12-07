@@ -3,10 +3,12 @@ export interface Props {
     href: string,
     text: string,
     className?: string,
-    variant: "primary" | "secondary"
+    variant: "primary" | "secondary",
+    target?: string,
+    rel?: string
 }
 
-const { href, text, className, variant } = Astro.props
+const { href, text, className, variant, target, rel } = Astro.props
 
 // Simplified theme styles with consistent color scheme
 const getThemeStyle = (variant: "primary" | "secondary") => {
@@ -24,6 +26,8 @@ const getTextColor = (variant: "primary" | "secondary") => {
 ---
 
 <a href={href} 
+    target={target}
+    rel={rel}
     class={`inline-flex items-center px-6 py-3 rounded-lg outline-none relative overflow-hidden border duration-300 ease-linear
     after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center 
     after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0

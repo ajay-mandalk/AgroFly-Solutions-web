@@ -1,0 +1,62 @@
+---
+import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+import { ChevronRight } from "lucide-react";
+
+import {announcement} from "@/config/announcement"
+
+---
+
+<div class="w-full bg-gradient-to-r from-[#000000] via-[#000000] to-[#000000]">
+  {announcement.isActive && (
+    <div id="announcement-banner" class="max-w-[85rem] mx-auto">
+      <div class="relative overflow-hidden px-4 py-2.5">
+        <!-- Background Pattern -->
+        <!-- [Your existing background SVG] -->
+
+        <!-- Content -->
+        <div class="relative flex items-center justify-center gap-x-3 gap-y-2 flex-wrap">
+          <!-- Badge -->
+          {/* <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-white text-blue-900">
+            {announcement.badge}
+            <span class="flex size-2">
+              <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-blue-500 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+            </span>
+          </span> */}
+
+          <!-- Message -->
+          <p class="text-white text-sm sm:text-base font-medium">
+            {announcement.text}
+          </p>
+
+          <!-- Animated Gradient CTA -->
+          <a href={announcement.link} class="inline-block">
+            <AnimatedGradientText className="px-4 py-1.5 bg-lime-400 text-gray-600 dark:text-gray-200">
+              Learn more
+              <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+            </AnimatedGradientText>
+          </a>
+
+          <!-- Close Button -->
+          <button
+  
+            type="button"
+            id="close-announcement"
+            class="absolute left-2 top-3 -translate-y-1/2 rounded-full p-1.5 text-white/90 hover:text-white hover:bg-white/20 transition-colors duration-200"
+          >
+            <span class="sr-only">close</span>
+            <img src="/icons/close.svg" alt="Close" class="h-4 w-4" />
+            <!-- [Your close icon SVG] -->
+          </button>
+        </div>
+      </div>
+    </div>
+  )}
+</div>
+
+<script>
+  import { initializeAnnouncement } from "@/utils/annoucement";
+  initializeAnnouncement();
+</script>
+
+

@@ -1,0 +1,54 @@
+---
+import HeroVideoDialog from '@/components/ui/hero-video-dialog';
+
+
+export const videos = [
+    {
+        videoSrc: "https://www.youtube.com/embed/PY9DcIMGxMs?si=Z-3xqeQO5eMiUvp0",
+        thumbnailSrc: "src/thumbnail/thumbnail.jpg",
+        thumbnailAlt: "Hero Video Light",
+    },
+    {
+        videoSrc: "https://www.youtube.com/embed/if03XinoA-8?si=7SVQu_Lm3hUgWj66",
+        thumbnailSrc: "src/thumbnail/thumbnail-1.jpg",
+        thumbnailAlt: "Hero Video Dark",
+    },
+    {
+        videoSrc: "https://www.youtube.com/embed/a6eCdJR9law?si=B8te8x3Gw3xkt2oM",
+        thumbnailSrc: "src/thumbnail/thumbnail-2.jpg",
+        thumbnailAlt: "Hero Video Light",
+    },
+    {
+        videoSrc: "https://www.youtube.com/embed/hBC7i-vHWsU?si=bqbwl76UvFkIffZF",
+        thumbnailSrc: "src/thumbnail/thumbnail-3.jpg",
+        thumbnailAlt: "Hero Video Dark",
+    },
+];
+---
+
+<section class="relative py-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {videos.map((video, _index) => (
+        <div class="relative">
+          <HeroVideoDialog
+          client:load
+            className="dark:hidden block"
+            animationStyle="top-in-bottom-out"
+            videoSrc={video.videoSrc}
+            thumbnailSrc={video.thumbnailSrc}
+            thumbnailAlt={video.thumbnailAlt}
+          />
+          <HeroVideoDialog
+          client:load
+            className="hidden dark:block"
+            animationStyle="top-in-bottom-out"
+            videoSrc={video.videoSrc}
+            thumbnailSrc={video.thumbnailSrc}
+            thumbnailAlt={video.thumbnailAlt}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

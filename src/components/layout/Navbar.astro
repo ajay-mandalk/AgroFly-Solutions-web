@@ -20,19 +20,20 @@ const navItems = [
         text: "Features"
     },
     {
-        href: "/DashBoard",
-        text: "Dashboard"
+        href: "#",
+        text: "Forum"
     }
 ];
 ---
 
-<header class="sticky top-0 w-full z-50 transition-all duration-300" id="navbar">
+<header class="sticky top-0 w-full z-40 backdrop-blur-sm bg-[#89f336] dark:bg-black" id="navbar">
     <Container>
+
         <nav class="flex items-center justify-between h-16 lg:h-20 gap-6">
             <!-- Logo -->
             <a href="/" class="flex items-center gap-2 hover:opacity-80 transition-all" aria-label="AgroFly Solutions Home">
                 <div class="w-8 h-8 relative rounded-xl bg-gradient-to-br from-green-500 via-primary to-[#FCDC58]">
-                    <span class="absolute w-2.5 h-2.5 rounded-full bg-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></span>
+                    <span class="absolute w-2.5 h-2.5 rounded-full dark:bg-black left-1/2 -translate-x-1/2 -translate-y-1/2"></span>
                 </div>
                 <span class="text-lg lg:text-xl font-bold text-heading-1">AgroFly Solutions</span>
             </a>
@@ -102,7 +103,7 @@ const navItems = [
 <style>
     .nav-wrapper {
         @apply fixed lg:static top-[64px] left-0 w-full h-[calc(100vh-64px)] lg:h-auto
-               bg-white dark:bg-gray-900 lg:bg-transparent
+               bg-white dark:bg-black lg:bg-transparent
                p-6 lg:p-0
                transform translate-x-full lg:translate-x-0
                transition-transform duration-300 ease-in-out
@@ -115,7 +116,7 @@ const navItems = [
 
     .nav-link::after {
         content: '';
-        @apply absolute left-0 right-0 bottom-0 h-0.5 bg-lime-400
+        @apply absolute left-0 right-0 bottom-0 h-0.5 bg-black dark:bg-lime-400
                transform scale-x-0 origin-right transition-transform duration-300;
     }
 
