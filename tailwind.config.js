@@ -4,8 +4,12 @@ export default {
     content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
   ],
+  options: {
+	safelist: ['translate-x-full', 'translate-x-0'],
+  },
   theme: {
   	extend: {
+
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

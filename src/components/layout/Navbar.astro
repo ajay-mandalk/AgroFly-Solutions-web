@@ -3,196 +3,239 @@ import BtnLink from "../shared/BtnLink.astro";
 import Container from "../shared/Container.astro";
 
 const navItems = [
-    {
-        href: "/",
-        text: "Home"
-    },
-    {
-        href: "#services",
-        text: "Services"
-    },
-    {
-        href: "#about-us", 
-        text: "About us"
-    },
-    {
-        href: "#features",
-        text: "Features"
-    },
-    {
-        href: "#",
-        text: "Forum"
-    }
+  { href: "#about-us", text: "About us" },
+  { href: "#features", text: "Features" },
+  { href: "#", text: "Forum" },
 ];
 ---
 
-<header class="sticky top-0 w-full z-40 backdrop-blur-sm bg-[#89f336] dark:bg-black" id="navbar">
-    <Container>
+<header
+  class="sticky top-0 w-full z-40 backdrop-blur-sm bg-[#89f336] dark:bg-black overflow-hidden"
+  id="navbar"
+>
+  <Container>
+    <nav class="flex items-center justify-between h-16 lg:h-20 gap-6">
+      <!-- Logo -->
+      <a
+        href="/"
+        class="flex items-center gap-2 hover:opacity-80 transition-all"
+        aria-label="AgroFly Solutions Home"
+      >
+        <div
+          class="w-8 h-8 relative rounded-xl bg-gradient-to-br from-green-500 via-primary to-[#FCDC58]"
+        >
+          <span
+            class="absolute w-2.5 h-2.5 rounded-full dark:bg-black left-1/2 -translate-x-1/2 -translate-y-1/2"
+          ></span>
+        </div>
+        <span class="text-lg lg:text-xl font-bold text-heading-1"
+          >AgroFly Solutions</span
+        >
+      </a>
 
-        <nav class="flex items-center justify-between h-16 lg:h-20 gap-6">
-            <!-- Logo -->
-            <a href="/" class="flex items-center gap-2 hover:opacity-80 transition-all" aria-label="AgroFly Solutions Home">
-                <div class="w-8 h-8 relative rounded-xl bg-gradient-to-br from-green-500 via-primary to-[#FCDC58]">
-                    <span class="absolute w-2.5 h-2.5 rounded-full dark:bg-black left-1/2 -translate-x-1/2 -translate-y-1/2"></span>
-                </div>
-                <span class="text-lg lg:text-xl font-bold text-heading-1">AgroFly Solutions</span>
-            </a>
-
-            <!-- Navigation Menu -->
-            <div data-navbar class="nav-wrapper">
-                <ul class="flex flex-col lg:flex-row gap-y-6 gap-x-8 lg:items-center lg:justify-center lg:flex-1 text-base font-medium">
-                    {navItems.map(item => (
-                        <li>
-                            <a 
-                                href={item.href}
-                                class="nav-link relative py-2.5 duration-300 hover:text-primary"
-                            >
-                                {item.text}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-
-                <div class="mt-6 lg:mt-0 lg:ml-6">
-                    <BtnLink 
-                        text="Get Started"
-                        href="#cta"
-                        className="w-full lg:w-auto flex justify-center items-center gap-2 font-medium"
-                        variant="primary"
-                    >
-                        Get Started
-                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" fill="currentColor"/>
-                        </svg>
-                    </BtnLink>
-                </div>
-            </div>
-
-            <!-- Controls -->
-            <div class="flex items-center gap-x-2">
-                <button 
-                    data-switch-theme 
-                    class="theme-toggle-btn"
-                    aria-label="Toggle theme"
+      <!-- Navigation Menu -->
+      <div class="nav-wrapper" data-navbar>
+        <ul
+          class="flex flex-col lg:flex-row gap-y-6 gap-x-8 lg:items-center lg:justify-center lg:flex-1 text-base font-medium"
+        >
+          {
+            navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="nav-link relative py-2.5 duration-300 hover:text-primary"
                 >
-                    <svg class="w-5 h-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                    </svg>
-                    <svg class="w-5 h-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-                    </svg>
-                </button>
+                  {item.text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
 
-                <button 
-                    data-toggle-nav
-                    class="hamburger-btn lg:hidden flex items-center justify-center"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false"
-                >
-                    <span class="sr-only">Menu</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
+        <div class="mt-6 lg:mt-0 lg:ml-6">
+          <BtnLink
+            text="Get Started"
+            href="#cta"
+            className="w-full lg:w-auto flex justify-center items-center gap-2 font-medium"
+            variant="primary"
+          >
+            Get Started
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                fill="currentColor"></path>
+            </svg>
+          </BtnLink>
+        </div>
+      </div>
 
-        </nav>
-    </Container>
+      <!-- Controls -->
+      <div class="flex items-center gap-x-2">
+        <button
+          data-switch-theme
+          class="theme-toggle-btn"
+          aria-label="Toggle theme"
+        >
+          <svg
+            class="w-5 h-5 dark:hidden"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            ></path>
+          </svg>
+          <svg
+            class="w-5 h-5 hidden dark:block"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            ></path>
+          </svg>
+        </button>
+
+        <button
+          data-toggle-nav
+          class="hamburger-btn lg:hidden flex items-center justify-center"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Menu</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </Container>
 </header>
 
 <style>
-    .nav-wrapper {
-        @apply fixed lg:static top-[64px] left-0 w-full h-[calc(100vh-64px)] lg:h-auto
+  .nav-wrapper {
+    @apply fixed lg:static top-[64px] left-0 w-full h-[calc(100vh-64px)] lg:h-auto
                bg-white dark:bg-black lg:bg-transparent
                p-6 lg:p-0
                transform translate-x-full lg:translate-x-0
                transition-transform duration-300 ease-in-out
                lg:flex lg:items-center lg:justify-end;
-    }
+  }
 
-    .nav-wrapper.show {
-        @apply translate-x-0;
-    }
+  .nav-wrapper.show {
+    @apply translate-x-0;
+  }
 
-    .nav-link::after {
-        content: '';
-        @apply absolute left-0 right-0 bottom-0 h-0.5 bg-black dark:bg-lime-400
+  .nav-link::after {
+    content: "";
+    @apply absolute left-0 right-0 bottom-0 h-0.5 bg-black dark:bg-lime-400
                transform scale-x-0 origin-right transition-transform duration-300;
-    }
+  }
 
-    .nav-link:hover::after {
-        @apply scale-x-100 origin-left;
-    }
+  .nav-link:hover::after {
+    @apply scale-x-100 origin-left;
+  }
 
-    .theme-toggle-btn {
-        @apply p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 
+  .theme-toggle-btn {
+    @apply p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 
         transition-colors duration-200;
-    }
-    .hamburger-btn {
-        @apply p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800
+  }
+  .hamburger-btn {
+    @apply p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800
                transition-colors duration-200;
-    }
+  }
 </style>
 
 <script>
-    const navbar = document.getElementById('navbar');
-    const navOverlay = document.querySelector('[data-nav-overlay]');
-    const navWrapper = document.querySelector('[data-navbar]');
-    const toggleBtn = document.querySelector('[data-toggle-nav]');
-    let isNavOpen = false;
+  const navbar = document.getElementById("navbar");
 
-    // Handle mobile navigation
-    function toggleMobileNav() {
-        if (!navWrapper  || !toggleBtn) return;
-        
-        isNavOpen = !isNavOpen;
-        navWrapper.classList.toggle('show');
-        toggleBtn.setAttribute('aria-expanded', isNavOpen.toString());
-        
-        // Prevent body scroll when nav is open
-        document.body.style.overflow = isNavOpen ? 'hidden' : '';
+  const navWrapper = document.querySelector("[data-navbar]");
+  const toggleBtn = document.querySelector("[data-toggle-nav]");
+  let isNavOpen = false;
+
+  // Handle mobile navigation
+  function toggleMobileNav() {
+    if (!navWrapper || !toggleBtn) return;
+
+    isNavOpen = !isNavOpen;
+    navWrapper.classList.toggle("show");
+    toggleBtn.setAttribute("aria-expanded", isNavOpen.toString());
+
+    // Prevent body scroll when nav is open
+    document.body.style.overflow = isNavOpen ? "hidden" : "";
+  }
+  // Reset scroll position when opening
+  if (isNavOpen && navWrapper) {
+    navWrapper.scrollTop = 0;
+  }
+
+  // Close mobile nav
+  function closeMobileNav() {
+    if (isNavOpen) {
+      isNavOpen = false;
+      navWrapper?.classList.remove("show");
+      toggleBtn?.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+  }
+
+  // Event Listeners
+  toggleBtn?.addEventListener("click", toggleMobileNav);
+
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", closeMobileNav);
+  });
+
+  // Add event listeners
+  toggleBtn?.addEventListener("click", toggleMobileNav);
+
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024) {
+      closeMobileNav();
+    }
+  });
+
+  // Handle scroll behavior
+  let lastScroll = 0;
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll <= 0) {
+      navbar?.classList.remove("nav-hidden");
+      return;
     }
 
-    // Close mobile nav
-    function closeMobileNav() {
-        if (isNavOpen) {
-            isNavOpen = false;
-            navWrapper?.classList.remove('show');
-            toggleBtn?.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        }
+    if (
+      currentScroll > lastScroll &&
+      !navbar?.classList.contains("nav-hidden")
+    ) {
+      navbar?.classList.add("nav-hidden");
+    } else if (
+      currentScroll < lastScroll &&
+      navbar?.classList.contains("nav-hidden")
+    ) {
+      navbar?.classList.remove("nav-hidden");
     }
 
-    // Event Listeners
-    toggleBtn?.addEventListener('click', toggleMobileNav);
- 
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', closeMobileNav);
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 1024) {
-            closeMobileNav();
-        }
-    });
-
-    // Handle scroll behavior
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
-        
-        if (currentScroll <= 0) {
-            navbar?.classList.remove('nav-hidden');
-            return;
-        }
-        
-        if (currentScroll > lastScroll && !navbar?.classList.contains('nav-hidden')) {
-            navbar?.classList.add('nav-hidden');
-        } else if (currentScroll < lastScroll && navbar?.classList.contains('nav-hidden')) {
-            navbar?.classList.remove('nav-hidden');
-        }
-        
-        lastScroll = currentScroll;
-    });
+    lastScroll = currentScroll;
+  });
 </script>
