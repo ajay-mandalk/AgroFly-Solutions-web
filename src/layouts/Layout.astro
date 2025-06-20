@@ -14,12 +14,52 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="AgenceX - SEO Agency website landing page made with ASTROJS and TAILWINDCSS">
-    <title>AgroFly Solutions - {title}</title>
+   <!-- Basic Meta Tags -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="AgroFly offers cutting-edge drone spraying and crop disease detection services for smarter, faster, and sustainable farming." />
+<meta name="keywords" content="AgroFly, agriculture drones, drone spraying, smart farming, crop health, agri-tech, drone services, sustainable farming" />
+<meta name="author" content="AgroFly Team" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Title -->
+<title>AgroFly Solutions – {title || 'Smart Agriculture with Drones'}</title>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://www.agrofly.in/" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Open Graph Meta (Facebook, LinkedIn) -->
+<meta property="og:title" content="AgroFly Solutions – Smart Drone Farming" />
+<meta property="og:description" content="Empowering Indian farmers with drone spraying and disease detection using AI-powered technology." />
+<meta property="og:image" content="https://www.agrofly.in/images/og-banner.jpg" />
+<meta property="og:url" content="https://www.agrofly.in/" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AgroFly Solutions – Smarter Farming with Drones" />
+<meta name="twitter:description" content="Book drone spraying or detect crop diseases with AgroFly’s precision farming solutions." />
+<meta name="twitter:image" content="https://www.agrofly.in/images/og-banner.jpg" />
+
+<!-- Optional: Structured Data (for SEO Rich Results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AgroFly Solutions",
+  "url": "https://www.agrofly.in/",
+  "logo": "https://www.agrofly.in/logo.png",
+  "sameAs": [
+    "https://twitter.com/agrofly",
+    "https://www.linkedin.com/company/agrofly"
+  ],
+  "description": "AgroFly is a smart agri-tech platform offering drone spraying, crop disease detection, and data-driven farming solutions across India."
+}
+</script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
