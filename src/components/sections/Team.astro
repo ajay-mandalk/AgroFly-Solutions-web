@@ -1,3 +1,8 @@
+---
+import teamData from '../../data/team.json';
+---
+
+
 <section id="team" class="px-4 py-10 bg-[#0F1A12]">
     <div class="max-w-6xl mx-auto text-center mb-12">
       <p class="text-sm font-semibold text-lime-600 uppercase">Our Team</p>
@@ -12,39 +17,26 @@
 
       </div>
     </div>
-  
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <!-- Team Member Card -->
+
+
+    
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {teamData.map((member) => (
       <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
-        <img src="team/akash.jpeg" alt="Akash Jha" class="w-full h-56 object-cover">
+        <img src={member.image} alt={member.name} class="w-full h-56 object-cover">
         <div class="p-6">
-          <h3 class="text-lg font-bold text-gray-900 dark:text-white">Akash Jha</h3>
-          <p class="text-sm text-lime-600 font-medium">CEO</p>
-          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">beliver, Meditor, Fisrt-Mover, .</p>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white">{member.name}</h3>
+          <p class="text-sm text-lime-600 font-medium">{member.role}</p>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{member.description}</p>
           <div class="mt-4 flex gap-3">
-            <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
-            <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
-            <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
+            <!-- Social icons -->
+            <div class="w-4 h-4 bg-amber-400 rounded-full"></div>
+            <div class="w-4 h-4 bg-amber-400 rounded-full"></div>
+            <div class="w-4 h-4 bg-amber-400 rounded-full"></div>
           </div>
         </div>
       </div>
-  
-      <!-- Duplicate and replace content for each team member -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
-        <img src="team/ajayedited1.png" alt="Ajay Mandal" class="w-full h-56 object-cover">
-        <div class="p-6">
-          <h3 class="text-lg font-bold text-gray-900 dark:text-white">Ajay Mandal</h3>
-          <p class="text-sm text-lime-600 font-medium">CTO</p>
-          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Changer.</p>
-          <div class="mt-4 flex gap-3">
-            <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
-            <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
-            <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Add more cards similarly... -->
-    </div>
-  </section>
+    ))}
+
+</section>
   

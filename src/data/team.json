@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Akash Jha",
+    "role": "CEO",
+    "description": "Akash Jha founded Agrofly with a heartfelt mission: to bring greenery and positivity to every corner of Delhi. Growing up in the capital, he witnessed firsthand the effects of pollution and fast urbanization. Determined to do something meaningful for both people and the planet, he started Agrofly to connect urban homes with the healing power of indoor plants.His leadership is rooted in empathy, grassroots impact, and a vision of a cleaner, healthier India. Under his guidance, Agrofly continues to grow as a people-first movement for green living.",
+    "image": "team/akash.jpeg"
+  },
+  {
+    "name": "Ajay Mandal",
+    "role": "CTO",
+    "description": "Ajay is the tech mind behind Agrofly’s digital presence. With a strong background in software and environmental innovation, he is responsible for building our technology platforms, website, and donor tracking systems. Ajay believes technology can connect communities and accelerate the green movement—and he’s making it happen at Agrofly every day",
+    "image": "team/ajayedited1.png"
+  }
+]
