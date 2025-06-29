@@ -2,6 +2,8 @@
 
 import BackToTop from "../components/layout/BackToTop.astro";
 import MadeWith from "../components/layout/MadeWith.astro";
+import "../styles/globals.css";
+import Footer from "../components/sections/Footer.astro";
 
 
 export interface Props {
@@ -71,6 +73,7 @@ const { title } = Astro.props;
   
     <BackToTop />
     <MadeWith />
+    <Footer/>
   </body>
   <script>
     const switchTheme = document.querySelector(
